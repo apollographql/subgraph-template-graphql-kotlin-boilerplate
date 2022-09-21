@@ -1,0 +1,9 @@
+graphql:
+  federation:
+    enabled: true
+    optInV2: true
+    tracing:
+      enabled: true
+      debug: true
+  packages:
+    - "com.example.template"

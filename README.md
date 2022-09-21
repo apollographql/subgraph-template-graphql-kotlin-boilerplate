@@ -1,0 +1,87 @@
+# Example Federated GraphQL Kotlin Subgraph
+
+This is an example application template that can be used to create Federated GraphQL subgraph using [GraphQL Kotlin](https://github.com/ExpediaGroup/graphql-kotlin).
+
+GraphQL Kotlin uses reflection API to generate schema directly from your source code. All public functions in classes
+implementing `Query`/`Mutation` will be exposed as corresponding queries and mutations.
+
+This example application implements following GraphQL schema:
+
+```graphql
+schema
+  @contact(description : "send urgent issues to [#oncall](https://yourteam.slack.com/archives/oncall).", name : "FooBar Server Team", url : "https://myteam.slack.com/archives/teams-chat-room-url")
+  @link(import : ["key"], url : "https://www.apollographql.com/docs/federation/federation-spec/") {
+    query: Query
+}
+
+type Foo @key(fields : "id", resolvable : true) {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    foo(id: ID!): Foo
+}
+```
+
+## Build
+
+This project uses [Gradle](https://gradle.com/) and requires Java 17+ runtime. In order to build the project locally (which
+will also execute all the tests), simply run the `build` task.
+
+```shell
+./gradlew build
+```
+
+> NOTE: in order to ensure you use the right version of Gradle we highly recommend to use the provided wrapper script
+
+### Code Quality
+
+Build is configured with [`detekt`](https://detekt.dev/) plugin that runs static code analysis and also [`JaCoCo`](https://www.eclemma.org/jacoco/)
+plugin that measures the code coverage. Both plugins are configured to run as part of the build lifecycle and will generate
+their reports under `build/reports`. You can invoke both plugins directly using their corresponding tasks.
+
+```shell
+./gradlew detekt
+./gradlew jacocoTestReport
+```
+
+Example integration test is provided. It starts up the SpringBoot server and executes example queries against it.
+
+```shell
+./gradlew test
+```
+
+### Generating SDL
+
+Build is configured to automatically generate SDL file upon completion. If you need to regenerate the file without running
+whole build, you can run the `graphqlGenerateSDL` task directly.
+
+```shell
+./gradlew graphqlGenerateSDL
+```
+
+### Continuous Integration
+
+This project comes with some example build actions that will trigger on PR requests and commits to the main branch.
+
+## Run
+
+To start the GraphQL server:
+
+* Run `Application.kt` directly from your IDE
+* Alternatively you can also run the Spring Boot plugin directly from the command line
+
+```shell script
+./gradlew bootRun
+```
+
+Once the app has started you can explore the example schema by opening the GraphQL Playground endpoint at http://localhost:8080/playground.
+
+## Additional Resources
+
+* [GraphQL Kotlin documentation](https://opensource.expediagroup.com/graphql-kotlin/)
+* [Spring Boot documentation](https://docs.spring.io/spring-boot/docs/2.7.3/reference/htmlsingle/)
+* [Gradle documentation](https://docs.gradle.org)
+
+
