@@ -1,6 +1,8 @@
-# Example Federated GraphQL Kotlin Subgraph
+# GraphQL Kotlin Federated Subgraph
 
-This is an example application template that can be used to create Federated GraphQL subgraph using [GraphQL Kotlin](https://github.com/ExpediaGroup/graphql-kotlin).
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/un6V2G?referralCode=xsbY2R)
+
+This template can be used to create Federated GraphQL subgraph using [GraphQL Kotlin](https://github.com/ExpediaGroup/graphql-kotlin). You can use this template from [Rover](https://www.apollographql.com/docs/rover/commands/template/) with `rover template use --template subgraph-graphql-kotlin`.
 
 GraphQL Kotlin uses reflection API to generate schema directly from your source code. All public functions in classes
 implementing `Query`/`Mutation` will be exposed as corresponding queries and mutations.
