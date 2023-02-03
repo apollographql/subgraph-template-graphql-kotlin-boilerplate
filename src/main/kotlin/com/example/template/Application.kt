@@ -10,7 +10,10 @@ class Application {
     // Print out the Apollo Studio Sandbox URL for querying this application
     @Bean
     fun commandLineRunner() = CommandLineRunner {
-        println("Apollo Studio Sandbox URL: https://studio.apollographql.com/sandbox/explorer?endpoint=http://localhost:8080/graphql")
+        println(
+            "Apollo Studio Sandbox URL: " +
+            "https://studio.apollographql.com/sandbox/explorer?endpoint=http://localhost:8080/graphql"
+        )
     }
 }
 
