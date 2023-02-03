@@ -14,6 +14,7 @@ class CorsFilter : WebFilter {
         ctx.response.headers.add("Access-Control-Allow-Origin", "https://studio.apollographql.com")
         ctx.response.headers.add("Access-Control-Allow-Methods", "POST")
         ctx.response.headers.add("Access-Control-Allow-Headers", "*")
+        ctx.response.headers.add("Access-Control-Allow-Credentials", "true")
         return when (ctx.request.method) {
             HttpMethod.OPTIONS -> {
                 ctx.response.headers.add("Access-Control-Max-Age", "1728000")
