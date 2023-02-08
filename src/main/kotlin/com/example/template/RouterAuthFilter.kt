@@ -8,8 +8,8 @@ import org.springframework.web.server.WebFilterChain
 import reactor.core.publisher.Mono
 
 /**
- * If the ROUTER_SECRET environment variable is set, then this filter will require that all requests have a `Router-Authorization`
- * header matching that value.
+ * If the ROUTER_SECRET environment variable is set, then this filter will require that all requests have
+ * a `Router-Authorization` header matching that value.
  *
  */
 @Component
