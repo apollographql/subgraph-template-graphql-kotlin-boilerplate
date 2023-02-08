@@ -90,6 +90,7 @@ Once the app has started you can explore the example schema by opening the Graph
 2. Set `SUBGRAPH_NAME` in .github/workflows/checks.yaml and .github/workflows/deploy.yaml
 3. Remove the `if: false` lines from `.github/workflows/checks.yaml` and `.github/workflows/deploy.yaml` to enable schema checks and publishing.
 4. Write your custom deploy logic in `.github/workflows/deploy.yaml`.
+5. Send the `Router-Authorization` header [from your Cloud router](https://www.apollographql.com/docs/graphos/routing/cloud-configuration#managing-secrets) and set the `ROUTER_SECRET` environment variable wherever you deploy this to.
 
 ## Additional Resources
 
