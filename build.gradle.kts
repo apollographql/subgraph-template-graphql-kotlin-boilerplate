@@ -30,7 +30,7 @@ dependencies {
 
     testImplementation("com.expediagroup:graphql-kotlin-spring-client:6.4.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.11")
 
     graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:6.4.1")
