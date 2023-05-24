@@ -3,7 +3,7 @@ import com.expediagroup.graphql.plugin.gradle.tasks.GraphQLGenerateTestClientTas
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.11"
+    id("org.springframework.boot") version "2.7.12"
     kotlin("jvm") version "1.8.21"
     kotlin("plugin.spring") version "1.8.21"
 
@@ -31,7 +31,7 @@ dependencies {
     testImplementation("com.expediagroup:graphql-kotlin-spring-client:6.4.1")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.11")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.12")
 
     graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:6.4.1")
 }
