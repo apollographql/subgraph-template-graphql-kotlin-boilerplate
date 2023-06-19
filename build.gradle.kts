@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.spring") version "1.8.22"
 
     // graphql plugins
-    id("com.expediagroup.graphql") version "6.5.2"
+    id("com.expediagroup.graphql") version "6.5.3"
 
     // code quality plugins
     id("io.gitlab.arturbosch.detekt") version "1.23.0"
