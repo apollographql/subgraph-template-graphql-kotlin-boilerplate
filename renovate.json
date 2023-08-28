@@ -3,5 +3,9 @@
   "extends": [
     "config:base",
     ":automergeMinor"
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  }
 }
