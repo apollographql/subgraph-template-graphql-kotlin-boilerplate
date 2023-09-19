@@ -7,5 +7,12 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
-  }
+  },
+  "automerge": true,
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["com.expediagroup"],
+      "groupName": "graphql-kotlin"
+    }
+  ]
 }
