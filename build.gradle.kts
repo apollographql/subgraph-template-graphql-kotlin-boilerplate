@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.10"
 
     // graphql plugins
-    id("com.expediagroup.graphql") version "6.5.6"
+    id("com.expediagroup.graphql") version "7.0.0"
 
     // code quality plugins
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
@@ -24,16 +24,16 @@ repositories {
 }
 
 dependencies {
-    implementation("com.expediagroup:graphql-kotlin-spring-server:6.5.6")
+    implementation("com.expediagroup:graphql-kotlin-spring-server:7.0.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    testImplementation("com.expediagroup:graphql-kotlin-spring-client:6.5.6")
+    testImplementation("com.expediagroup:graphql-kotlin-spring-client:7.0.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.7.15")
 
-    graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:6.5.6")
+    graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:7.0.0")
 }
 
 tasks {
