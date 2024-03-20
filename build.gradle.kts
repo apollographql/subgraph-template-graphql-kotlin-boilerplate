@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "3.1.5"
     kotlin("jvm") version "1.9.23"
-    kotlin("plugin.spring") version "1.9.22"
+    kotlin("plugin.spring") version "1.9.23"
 
     // graphql plugins
     id("com.expediagroup.graphql") version "7.0.2"
