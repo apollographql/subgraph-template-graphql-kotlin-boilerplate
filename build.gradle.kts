@@ -3,7 +3,7 @@ import com.expediagroup.graphql.plugin.gradle.tasks.GraphQLGenerateTestClientTas
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.3.6"
+    id("org.springframework.boot") version "3.4.0"
     kotlin("jvm") version "2.0.21"
     kotlin("plugin.spring") version "2.0.21"
 
