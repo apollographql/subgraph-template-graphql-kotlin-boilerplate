@@ -11,7 +11,7 @@ plugins {
     id("com.expediagroup.graphql") version "8.3.0"
 
     // code quality plugins
-    id("io.gitlab.arturbosch.detekt") version "1.23.7"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
     jacoco
 }
 
