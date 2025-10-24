@@ -30,7 +30,7 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew clean build graphqlGenerateSDL
       - name: Upload schema artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           path: build/${{ env.SCHEMA_FILE }}
           name: ${{ env.SCHEMA_ARTIFACT }}
@@ -53,7 +53,7 @@ jobs:
       SUBGRAPH_NAME: foo-bar
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v6
         with:
           name: ${{ needs.prepare_schema.outputs.schema_artifact }}
       - name: Install Rover
