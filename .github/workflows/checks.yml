@@ -1,6 +1,9 @@
 name: PR Checks
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -56,3 +59,26 @@ jobs:
         run: rover subgraph check ${{ secrets.APOLLO_GRAPH_REF }} --schema ${{ needs.test.outputs.schema }} --name ${{ env.SUBGRAPH_NAME }}
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+
+  compose:
+    name: Composition Check
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download schema artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ needs.test.outputs.schema_artifact }}
+      - name: Install Rover
+        run: |
+          curl -sSL https://rover.apollo.dev/nix/latest | sh
+          echo "$HOME/.rover/bin" >> $GITHUB_PATH
+      - name: Compose
+        run: |
+          echo "federation_version: =2.10.0" > /tmp/supergraph.yaml
+          echo "subgraphs:" >> /tmp/supergraph.yaml
+          echo "  template:" >> /tmp/supergraph.yaml
+          echo "    routing_url: http://localhost:8080/graphql" >> /tmp/supergraph.yaml
+          echo "    schema:" >> /tmp/supergraph.yaml
+          echo "      file: ./${{ needs.test.outputs.schema }}" >> /tmp/supergraph.yaml
+          rover supergraph compose --config /tmp/supergraph.yaml
