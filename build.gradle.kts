@@ -32,7 +32,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.5.16")
 
-    graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:9.3.0")
+    graphqlSDL("com.expediagroup:graphql-kotlin-federated-hooks-provider:9.3.1")
 }
 
 tasks {
